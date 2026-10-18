@@ -1,8 +1,8 @@
 # Progresso do Guia RevisaFlash
 
-**Status:** ETAPA 0 concluída. Próxima: ETAPA 1.
+**Status:** ETAPA 1 concluída. Próxima: ETAPA 2A (Início, Conteúdo, Calendário).
 
-**Próxima mensagem a enviar:** `Continue a partir de docs/PROGRESSO-GUIA.md` (fazer a ETAPA 1)
+**Próxima mensagem a enviar:** `Continue a partir de docs/PROGRESSO-GUIA.md` (fazer a ETAPA 2A)
 
 ## Decisões tomadas
 - O código foi lido do repositório GitHub `revisa-flash` (branch main). Este projeto Lovable é separado: o guia precisa ser criado DENTRO do repositório do app.
@@ -95,7 +95,7 @@ Outras telas: Leitor de PDF (`/pdf/:fileId`), Simulado aberto (`/simulados/:id`)
 
 ## Plano das etapas
 - [x] ETAPA 0 — leitura e anotações
-- [ ] ETAPA 1 — componentes, index, rota /guia, CSS de impressão, Capa e Visão geral
+- [x] ETAPA 1 — componentes, index, rota /guia, CSS de impressão, Capa e Visão geral
 - [ ] ETAPA 2A — Início, Conteúdo, Calendário
 - [ ] ETAPA 2B — Sessões, Erros, Flashcards
 - [ ] ETAPA 2C — Simulados/Listas, Comunidade, Ajustes
@@ -103,6 +103,17 @@ Outras telas: Leitor de PDF (`/pdf/:fileId`), Simulado aberto (`/simulados/:id`)
 - [ ] ETAPA 3 — Funcionalidades gerais + Limitações gerais
 - [ ] ETAPA 4 — FAQ, Primeiros passos, revisão final
 
+## Decisões da ETAPA 1
+- O guia foi montado neste projeto separado (TanStack Router). A rota é `src/routes/guia.tsx` e `/` redireciona para `/guia`. Para levar ao app original (React Router), copie `src/guia/` e o bloco "Guia RevisaFlash" do `src/styles.css`, e adicione `{ path: '/guia', element: <GuiaPage/> }` em `src/router.tsx`.
+- A pasta `src/guia/` não depende do roteador: só React, Tailwind e lucide-react.
+- Cores e classes do guia ficam em `src/styles.css` (prefixo `guia-`). A fonte Plus Jakarta Sans é carregada no `__root.tsx`.
+- Ícone da capa: BookOpen (o logo real do app, `LogoIcon.tsx`, não foi copiado) (confirmar).
+
 ## Arquivos criados
+- src/guia/componentes.tsx — Pagina, TituloSecao, Tela, Marca, Legenda, CaixaDica, CaixaAtencao, TabelaLimitacoes
+- src/guia/index.tsx — GuiaPage, barra com "Baixar PDF" e lista `secoes` (ordem do documento)
+- src/guia/secoes/capa.tsx, src/guia/secoes/visao-geral.tsx
+- src/routes/guia.tsx (rota) e src/routes/index.tsx (redireciona para /guia)
+- src/styles.css — bloco "Guia RevisaFlash" (cores, cartões, @media print A4)
 - docs/PROGRESSO-GUIA.md
 - docs/PROMPT-CONTINUAR.md
