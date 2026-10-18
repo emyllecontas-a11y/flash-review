@@ -11,9 +11,13 @@ Leia docs/PROGRESSO-GUIA.md antes de começar e não altere o resto do app.
 **(d) Arquivos já criados:**
 - docs/PROGRESSO-GUIA.md — anotações por tela e plano.
 - docs/PROMPT-CONTINUAR.md — este prompt.
+- src/guia/componentes.tsx — componentes reutilizáveis.
+- src/guia/index.tsx — monta o documento; adicione novas seções na lista `secoes`.
+- src/guia/secoes/capa.tsx e visao-geral.tsx — prontas.
+- src/routes/guia.tsx — rota /guia. src/styles.css — classes `guia-*` e impressão.
 
 **(e) O que falta, em ordem:**
-1. ETAPA 1: src/guia/componentes.tsx, src/guia/index.tsx, rota /guia em src/router.tsx, CSS de impressão, Capa e Visão geral.
+1. (feito) ETAPA 1.
 2. ETAPA 2: uma seção por aba (lotes de 3, ordem do menu).
 3. ETAPA 3: funcionalidades gerais + tabela de Limitações gerais.
 4. ETAPA 4: FAQ (6–8), Primeiros passos em 5 minutos, revisão final.
